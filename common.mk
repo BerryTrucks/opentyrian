@@ -11,8 +11,8 @@ define PINFO
 PINFO DESCRIPTION = OpenTyrian
 endef
 DEVICE_IP = 169.254.0.1
-DEVICE_PASS = pass
-BAR_CONFIGURATION = Arm-Release
+DEVICE_PASS = lalala
+BAR_CONFIGURATION = Device-Release
 BAR_NAME = opentyrian.bar
 
 SDL_PATH = $(PROJECT_ROOT)/../SDL
@@ -26,7 +26,7 @@ EXTRA_SRCVPATH += $(PROJECT_ROOT)/src
 EXTRA_INCVPATH += $(SDL_INC_PATH)
 EXTRA_LIBVPATH += $(SDL_LIB_PATH)
 
-LIBS += m png14 z bps screen ^SDL egl asound GLESv2
+LIBS += m png16 z bps screen ^SDL EGL asound GLESv2
 
 include $(MKFILES_ROOT)/qmacros.mk
 ifndef QNX_INTERNAL
@@ -61,13 +61,13 @@ opentyrian.bar: $(PROJECT_ROOT)/bar-descriptor.xml \
                 $(PROJECT_ROOT)/controls-1280x720.json \
                 $(PROJECT_ROOT)/controls-1280x768.json \
                 $(PROJECT_ROOT)/controls-1440x1440.json
-	$(PACKAGER) -package $(PROJECT_ROOT)/$(BAR_NAME) $(PROJECT_ROOT)/bar-descriptor.xml -C . -configuration $(BAR_CONFIGURATION) 
+	$(PACKAGER) -package $(PROJECT_ROOT)/$(BAR_NAME) $(PROJECT_ROOT)/bar-descriptor.xml -C . -configuration $(BAR_CONFIGURATION)
 
 deploy:
-	$(DEPLOYER) -installApp -device $(DEVICE_IP) -password $(DEVICE_PASS) $(PROJECT_ROOT)/$(BAR_NAME) 
+	$(DEPLOYER) -installApp -device $(DEVICE_IP) -password $(DEVICE_PASS) $(PROJECT_ROOT)/$(BAR_NAME)
 
 undeploy:
-	$(DEPLOYER) -uninstallApp -device $(DEVICE_IP) -password $(DEVICE_PASS) $(PROJECT_ROOT)/$(BAR_NAME) 
+	$(DEPLOYER) -uninstallApp -device $(DEVICE_IP) -password $(DEVICE_PASS) $(PROJECT_ROOT)/$(BAR_NAME)
 
 display-vars:
 	$(foreach v,$(.VARIABLES),$(info $(v) = $($(v))))
