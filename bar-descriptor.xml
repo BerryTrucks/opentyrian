@@ -5,8 +5,8 @@
     <versionNumber>1.2.4</versionNumber>
     <buildId>0</buildId>
     <description>Tyrian is an open-source port of the MS-DOS game Tyrian.</description>
-    <authorId>gYAAgNvOOqSvefTEeSiCjimMZSs</authorId>
-    <author>Oleg Kosenkov</author>
+    <authorId>gYAAgML3SsjiZXhA1d82mdE9DTw</authorId>
+    <author>BerryTrucks</author>
     <initialWindow>
         <aspectRatio>landscape</aspectRatio>
         <autoOrients>false</autoOrients>
@@ -31,11 +31,11 @@
     <asset path="splash-1440x1440.png">splash-1440x1440.png</asset>
     <configuration name="Device-Debug">
         <platformArchitecture>armle-v7</platformArchitecture>
-        <asset path="Device-Debug/opentyrian" entry="true" type="Qnx/Elf">opentyrian</asset>
+        <asset path="arm/o-le-v7-g/opentyrian_g" entry="true" type="Qnx/Elf">opentyrian_g</asset>
     </configuration>
     <configuration name="Device-Release">
         <platformArchitecture>armle-v7</platformArchitecture>
-        <asset path="Device-Release/opentyrian" entry="true" type="Qnx/Elf">opentyrian</asset>
+        <asset path="arm/o-le-v7/opentyrian" entry="true" type="Qnx/Elf">opentyrian</asset>
     </configuration>
     <configuration name="Simulator">
         <platformArchitecture>x86</platformArchitecture>
